@@ -1,0 +1,26 @@
+int	check_redirection_operator(char **args, int *position)
+{
+	int (type), i = 0;
+	type = 0;
+	if (!args)
+		return (-1);
+	while (args[i])
+	{
+		if (ft_strncmp(args[i], ">", 3) == 0
+			|| ft_strncmp(args[i], ">>", 3) == 0
+			|| ft_strncmp(args[i], "<", 3) == 0)
+		{
+			if (ft_strncmp(args[i], ">", 3) == 0)
+				type = 1;
+			else if (ft_strncmp(args[i], ">>", 3) == 0)
+				type = 2;
+			else
+				type = 3;
+			if (re_direction(args[i + 1], type) < 0)
+				return (-1);
+			*position = i;
+		}
+		i++;
+	}
+	return (0);
+}
