@@ -30,7 +30,7 @@ int	norm_status(long long v)
 
 size_t	skip_spaces(const char *s, size_t i)
 {
-	while (s[i] && isspace((unsigned char)s[i]))
+	while (s[i] && ft_isspace((unsigned char)s[i]))
 		i++;
 	return (i);
 }

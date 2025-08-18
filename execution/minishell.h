@@ -163,5 +163,6 @@ size_t		skip_spaces(const char *s, size_t i);
 void		print_exit_if_interactive(void);
 int			norm_status(long long v);
 int			ft_isdigit(int c);
+int			ft_isspace(int c);
 
 #endif
